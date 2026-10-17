@@ -1,0 +1,43 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * Copyright (c) 2026 Andreas Möller
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE.md file that was distributed with this source code.
+ *
+ * @see https://github.com/ergebnis/rector-config
+ */
+
+use Ergebnis\Rector;
+use Rector\Config;
+use Rector\PHPUnit;
+use Rector\ValueObject;
+
+return static function (Config\RectorConfig $rectorConfig): void {
+    $rectorConfig->cacheDirectory(__DIR__ . '/.build/rector/');
+
+    $rectorConfig->paths([
+        __DIR__ . '/src/',
+        __DIR__ . '/test/',
+    ]);
+
+    $rectorConfig->phpVersion(ValueObject\PhpVersion::PHP_74);
+
+    $rectorConfig->rules([
+        Rector\Rules\Faker\GeneratorPropertyFetchToMethodCallRector::class,
+    ]);
+
+    $rectorConfig->ruleWithConfiguration(Rector\Rules\Files\ReferenceNamespacedSymbolsRelativeToNamespacePrefixRector::class, [
+        'discoverNamespacePrefixes' => true,
+        'parentNamespacePrefixes' => [
+            'Ergebnis\Rector\Config',
+        ],
+    ]);
+
+    $rectorConfig->sets([
+        PHPUnit\Set\PHPUnitSetList::COMPOSER_BASED,
+    ]);
+};

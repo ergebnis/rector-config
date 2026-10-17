@@ -1,0 +1,25 @@
+# https://docs.github.com/en/actions
+
+name: "Triage"
+
+on: # yamllint disable-line rule:truthy
+  # zizmor: ignore[dangerous-triggers] -- triage only adds labels via bot token.
+  pull_request_target:
+    types:
+      - "opened"
+
+permissions: {}
+
+jobs:
+  label:
+    name: "Label"
+
+    runs-on: "ubuntu-26.04"
+
+    timeout-minutes: 5
+
+    steps:
+      - name: "Add labels based on branch name"
+        uses: "ergebnis/.github/actions/github/pull-request/add-label-based-on-branch-name@32cb0efd4ea19f657c4bcedf1129361d0b730c3c" # 1.14.0
+        with:
+          github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
