@@ -5,6 +5,8 @@ parameters:
 	ergebnis:
 		noExtends:
 			classesAllowedToBeExtended:
+				- Ergebnis\Rector\Config\Test\EndToEnd\RuleSet\AbstractRuleSetTestCase
+				- Ergebnis\Rector\Config\Test\Unit\RuleSet\AbstractRuleSetTestCase
 				- InvalidArgumentException
 
 	inferPrivatePropertyTypeFromConstructor: true

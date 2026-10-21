@@ -23,7 +23,137 @@ composer require --dev ergebnis/rector-config
 
 ## Usage
 
-💡 This is a great place for showing a few usage examples!
+### Configuration
+
+Pick one of the rule sets:
+
+- [`Ergebnis\Rector\Config\RuleSet\Php53`](src/RuleSet/Php53.php)
+
+Each rule set lists every rule that `rector/rector` and `ergebnis/rector-rules` provide, except rules for frameworks and libraries, downgrade rules, and generic rules that only make sense with a project-specific configuration. A rule set enables or disables each of these rules explicitly and does not include any of the sets that `rector/rector` provides.
+
+Create a configuration file `rector.php` in the root of your project:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+use Ergebnis\Rector\Config;
+
+$ruleSet = Config\RuleSet\Php53::create();
+
+return Config\Factory::fromRuleSet($ruleSet)
+    ->withCache(__DIR__ . '/.build/rector/')
+    ->withPaths([
+        __DIR__ . '/src/',
+        __DIR__ . '/test/',
+    ]);
+```
+
+`Config\Factory::fromRuleSet()` returns the `Rector\Configuration\RectorConfigBuilder` of `rector/rector`, so you can continue to configure paths, skips, and sets for frameworks and libraries, for example the sets for PHPUnit:
+
+```diff
+ <?php
+
+ declare(strict_types=1);
+
+ use Ergebnis\Rector\Config;
++use Rector\PHPUnit;
+
+ $ruleSet = Config\RuleSet\Php53::create();
+
+ return Config\Factory::fromRuleSet($ruleSet)
+     ->withCache(__DIR__ . '/.build/rector/')
+     ->withPaths([
+         __DIR__ . '/src/',
+         __DIR__ . '/test/',
+-    ]);
++    ])
++    ->withSets([
++        PHPUnit\Set\PHPUnitSetList::COMPOSER_BASED,
++    ]);
+```
+
+:exclamation: Avoid sets that overlap with the rule set, for example `withPhpSets()`, `withPreparedSets()`, or `withSets()` with a set from `Rector\Set\ValueObject\SetList`. `rector/rector` then warns on every run that rules are registered twice, and the set enables rules that the rule set disables on purpose. Use `withRules()` on the rule set and `withSkip()` on the `Rector\Configuration\RectorConfigBuilder` instead.
+
+### Git
+
+All configuration examples use the caching feature, and if you want to use it as well, you should add the cache directory to `.gitignore`:
+
+```diff
++ /.build/
+ /vendor/
+```
+
+### Configuring a rule set that overrides rules
+
+:bulb: Optionally override rules from a rule set by passing a set of rules:
+
+```diff
+ <?php
+
+ declare(strict_types=1);
+
+ use Ergebnis\Rector\Config;
++use Ergebnis\Rector\Rules;
++use Rector\CodeQuality;
+
+-$ruleSet = Config\RuleSet\Php53::create();
++$ruleSet = Config\RuleSet\Php53::create()->withRules(Config\Rules::fromArray([
++    CodeQuality\Rector\Identical\SimplifyBoolIdenticalTrueRector::class => false,
++    Rules\Files\ReferenceNamespacedSymbolsRelativeToNamespacePrefixRector::class => [
++        'discoverNamespacePrefixes' => true,
++        'parentNamespacePrefixes' => [
++            'Acme\\Example',
++        ],
++    ],
++]));
+
+ return Config\Factory::fromRuleSet($ruleSet)
+     ->withCache(__DIR__ . '/.build/rector/')
+     ->withPaths([
+         __DIR__ . '/src/',
+         __DIR__ . '/test/',
+     ]);
+```
+
+Each rule passed to `withRules()` replaces the entry of the rule set as a whole:
+
+- `false` disables the rule;
+- `true` enables a rule that is not configurable;
+- an array enables a configurable rule with exactly this configuration.
+
+Passing a rule that the rule set does not list throws an `Ergebnis\Rector\Config\Exception\UnknownRule` exception.
+
+:exclamation: Calling `withConfiguredRule()` on the `Rector\Configuration\RectorConfigBuilder` for a rule that the rule set already configures merges the configurations, so prefer `withRules()` on the rule set.
+
+### Configuring a rule set that skips rules for paths
+
+:bulb: Optionally skip rules for some paths with `withSkip()`:
+
+```diff
+ <?php
+
+ declare(strict_types=1);
+
+ use Ergebnis\Rector\Config;
++use Rector\CodeQuality;
+
+ $ruleSet = Config\RuleSet\Php53::create();
+
+ return Config\Factory::fromRuleSet($ruleSet)
+     ->withCache(__DIR__ . '/.build/rector/')
+     ->withPaths([
+         __DIR__ . '/src/',
+         __DIR__ . '/test/',
+-    ]);
++    ])
++    ->withSkip([
++        CodeQuality\Rector\Identical\SimplifyBoolIdenticalTrueRector::class => [
++            __DIR__ . '/test/',
++        ],
++    ]);
+```
 
 ## Changelog
 

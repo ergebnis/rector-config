@@ -35,7 +35,9 @@
     "phpstan/phpstan-deprecation-rules": "^2.0.5",
     "phpstan/phpstan-phpunit": "^2.1.1",
     "phpstan/phpstan-strict-rules": "^2.1.0",
-    "phpunit/phpunit": "^9.6.38"
+    "phpunit/phpunit": "^9.6.38",
+    "symfony/filesystem": "^5.4.54",
+    "symfony/process": "^5.4.54"
   },
   "autoload": {
     "psr-4": {

@@ -8,5 +8,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`40a25bc...main`][40a25bc...main].
 
+### Added
+
+- Added `Factory`, `PhpVersion`, `Rules`, `RuleSet`, and `RuleSet\Php53` rule set ([#3]), by [@localheinz]
+
 [40a25bc...main]: https://github.com/ergebnis/rector-config/compare/40a25bc...main
 
+[#3]: https://github.com/ergebnis/rector-config/pull/3
+
+[@localheinz]: https://github.com/localheinz
