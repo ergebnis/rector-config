@@ -29,6 +29,7 @@ Pick one of the rule sets:
 
 - [`Ergebnis\Rector\Config\RuleSet\Php53`](src/RuleSet/Php53.php)
 - [`Ergebnis\Rector\Config\RuleSet\Php54`](src/RuleSet/Php54.php)
+- [`Ergebnis\Rector\Config\RuleSet\Php55`](src/RuleSet/Php55.php)
 
 Each rule set lists every rule that `rector/rector` and `ergebnis/rector-rules` provide, except rules for frameworks and libraries, downgrade rules, and generic rules that only make sense with a project-specific configuration. A rule set enables or disables each of these rules explicitly and does not include any of the sets that `rector/rector` provides.
 
