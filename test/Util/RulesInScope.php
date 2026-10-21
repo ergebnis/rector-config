@@ -103,16 +103,16 @@ final class RulesInScope
      */
     public static function minimumPhpVersion(string $className): int
     {
-        $rule = (new \ReflectionClass($className))->newInstanceWithoutConstructor();
+        $rector = (new \ReflectionClass($className))->newInstanceWithoutConstructor();
 
-        if (!$rule instanceof VersionBonding\Contract\MinPhpVersionInterface) {
+        if (!$rector instanceof VersionBonding\Contract\MinPhpVersionInterface) {
             throw new \InvalidArgumentException(\sprintf(
                 'Rule "%s" does not declare a minimum PHP version.',
                 $className,
             ));
         }
 
-        return $rule->provideMinPhpVersion();
+        return $rector->provideMinPhpVersion();
     }
 
     /**
@@ -172,22 +172,22 @@ final class RulesInScope
             return false;
         }
 
-        $reflection = new \ReflectionClass($className);
+        $reflectionClass = new \ReflectionClass($className);
 
-        if ($reflection->isAbstract()) {
+        if ($reflectionClass->isAbstract()) {
             return false;
         }
 
-        if (!$reflection->implementsInterface(Contract\Rector\RectorInterface::class)) {
+        if (!$reflectionClass->implementsInterface(Contract\Rector\RectorInterface::class)) {
             return false;
         }
 
-        if ($reflection->implementsInterface(Configuration\Deprecation\Contract\DeprecatedInterface::class)) {
+        if ($reflectionClass->implementsInterface(Configuration\Deprecation\Contract\DeprecatedInterface::class)) {
             return false;
         }
 
-        $docComment = $reflection->getDocComment();
+        $docComment = $reflectionClass->getDocComment();
 
-        return !(\is_string($docComment) && false !== \mb_strpos($docComment, '@deprecated'));
+        return !\is_string($docComment) || false === \mb_strpos($docComment, '@deprecated');
     }
 }
