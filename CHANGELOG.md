@@ -13,6 +13,7 @@ For a full diff see [`40a25bc...main`][40a25bc...main].
 - Added `Factory`, `PhpVersion`, `Rules`, `RuleSet`, and `RuleSet\Php53` rule set ([#3]), by [@localheinz]
 - Added `RuleSet\Php54` rule set ([#4]), by [@localheinz]
 - Added `RuleSet\Php55` rule set ([#5]), by [@localheinz]
+- Added `RuleSet\Php56` rule set ([#6]), by [@localheinz]
 - Added support for PHP 8.6 ([#46]), by [@localheinz]
 
 ### Changed
@@ -25,6 +26,7 @@ For a full diff see [`40a25bc...main`][40a25bc...main].
 [#3]: https://github.com/ergebnis/rector-config/pull/3
 [#4]: https://github.com/ergebnis/rector-config/pull/4
 [#5]: https://github.com/ergebnis/rector-config/pull/5
+[#6]: https://github.com/ergebnis/rector-config/pull/6
 [#46]: https://github.com/ergebnis/rector-config/pull/46
 [#52]: https://github.com/ergebnis/rector-config/pull/52
 [#57]: https://github.com/ergebnis/rector-config/pull/57
