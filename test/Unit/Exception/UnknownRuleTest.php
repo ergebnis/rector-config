@@ -26,13 +26,13 @@ final class UnknownRuleTest extends Framework\TestCase
     {
         $className = Rules\Faker\GeneratorPropertyFetchToMethodCallRector::class;
 
-        $exception = Exception\UnknownRule::fromClassName($className);
+        $unknownRule = Exception\UnknownRule::fromClassName($className);
 
         $message = \sprintf(
             'Rule set does not list a rule "%s", so it can not be overridden.',
             $className,
         );
 
-        self::assertSame($message, $exception->getMessage());
+        self::assertSame($message, $unknownRule->getMessage());
     }
 }

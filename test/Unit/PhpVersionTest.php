@@ -93,27 +93,27 @@ final class PhpVersionTest extends Framework\TestCase
 
     public function testIsSmallerThanReturnsFalseWhenValueIsGreater(): void
     {
-        $one = PhpVersion::fromInt(\PHP_VERSION_ID + 1);
+        $phpVersion = PhpVersion::fromInt(\PHP_VERSION_ID + 1);
         $two = PhpVersion::fromInt(\PHP_VERSION_ID);
 
-        self::assertFalse($one->isSmallerThan($two));
+        self::assertFalse($phpVersion->isSmallerThan($two));
     }
 
     public function testIsSmallerThanReturnsFalseWhenValueIsSame(): void
     {
         $value = \PHP_VERSION_ID;
 
-        $one = PhpVersion::fromInt($value);
+        $phpVersion = PhpVersion::fromInt($value);
         $two = PhpVersion::fromInt($value);
 
-        self::assertFalse($one->isSmallerThan($two));
+        self::assertFalse($phpVersion->isSmallerThan($two));
     }
 
     public function testIsSmallerThanReturnsTrueWhenValueIsSmaller(): void
     {
-        $one = PhpVersion::fromInt(\PHP_VERSION_ID);
+        $phpVersion = PhpVersion::fromInt(\PHP_VERSION_ID);
         $two = PhpVersion::fromInt(\PHP_VERSION_ID + 1);
 
-        self::assertTrue($one->isSmallerThan($two));
+        self::assertTrue($phpVersion->isSmallerThan($two));
     }
 }
