@@ -15,6 +15,7 @@ For a full diff see [`40a25bc...main`][40a25bc...main].
 - Added `RuleSet\Php55` rule set ([#5]), by [@localheinz]
 - Added `RuleSet\Php56` rule set ([#6]), by [@localheinz]
 - Added `RuleSet\Php70` rule set ([#7]), by [@localheinz]
+- Added `RuleSet\Php71` rule set ([#8]), by [@localheinz]
 - Added support for PHP 8.6 ([#46]), by [@localheinz]
 
 ### Changed
@@ -29,6 +30,7 @@ For a full diff see [`40a25bc...main`][40a25bc...main].
 [#5]: https://github.com/ergebnis/rector-config/pull/5
 [#6]: https://github.com/ergebnis/rector-config/pull/6
 [#7]: https://github.com/ergebnis/rector-config/pull/7
+[#8]: https://github.com/ergebnis/rector-config/pull/8
 [#46]: https://github.com/ergebnis/rector-config/pull/46
 [#52]: https://github.com/ergebnis/rector-config/pull/52
 [#57]: https://github.com/ergebnis/rector-config/pull/57
