@@ -31,9 +31,9 @@ return static function (Config\RectorConfig $rectorConfig): void {
     ]);
 
     $rectorConfig->ruleWithConfiguration(Rector\Rules\Files\ReferenceNamespacedSymbolsRelativeToNamespacePrefixRector::class, [
-        'discoverNamespacePrefixes' => true,
-        'parentNamespacePrefixes' => [
+        'namespacePrefixes' => [
             'Ergebnis\Rector\Config',
+            'Ergebnis\Rector\Rules',
         ],
     ]);
 

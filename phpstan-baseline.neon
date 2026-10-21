@@ -1,3 +1,14 @@
 parameters:
-	ignoreErrors: []
+	ignoreErrors:
+		-
+			message: '#^Parameter \#1 \$value of static method Ergebnis\\Rector\\Config\\Rules\:\:fromArray\(\) expects array\<class\-string\<Rector\\Contract\\Rector\\RectorInterface\>, array\<mixed\>\|bool\>, array\<string, string\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: test/Unit/RuleSetTest.php
+
+		-
+			message: '#^Parameter \#1 \$value of static method Ergebnis\\Rector\\Config\\Rules\:\:fromArray\(\) expects array\<class\-string\<Rector\\Contract\\Rector\\RectorInterface\>, array\<mixed\>\|bool\>, array\<string, true\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: test/Unit/RuleSetTest.php
 

@@ -44,8 +44,9 @@ static-code-analysis-baseline: vendor ## Generates a baseline for static code an
 	vendor/bin/phpstan --allow-empty-baseline --configuration=phpstan.neon --generate-baseline=phpstan-baseline.neon --memory-limit=-1
 
 .PHONY: tests
-tests: vendor ## Runs unit tests with phpunit/phpunit
+tests: vendor ## Runs unit and end-to-end tests with phpunit/phpunit
 	vendor/bin/phpunit --configuration=test/Unit/phpunit.xml
+	vendor/bin/phpunit --configuration=test/EndToEnd/phpunit.xml
 
 vendor: composer.json composer.lock
 	composer validate --strict
