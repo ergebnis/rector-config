@@ -17,6 +17,7 @@ For a full diff see [`40a25bc...main`][40a25bc...main].
 - Added `RuleSet\Php70` rule set ([#7]), by [@localheinz]
 - Added `RuleSet\Php71` rule set ([#8]), by [@localheinz]
 - Added `RuleSet\Php72` rule set ([#9]), by [@localheinz]
+- Added `RuleSet\Php73` rule set ([#10]), by [@localheinz]
 
 [40a25bc...main]: https://github.com/ergebnis/rector-config/compare/40a25bc...main
 
@@ -27,5 +28,6 @@ For a full diff see [`40a25bc...main`][40a25bc...main].
 [#7]: https://github.com/ergebnis/rector-config/pull/7
 [#8]: https://github.com/ergebnis/rector-config/pull/8
 [#9]: https://github.com/ergebnis/rector-config/pull/9
+[#10]: https://github.com/ergebnis/rector-config/pull/10
 
 [@localheinz]: https://github.com/localheinz
