@@ -12,32 +12,29 @@ declare(strict_types=1);
  */
 
 use Ergebnis\Rector;
-use Rector\Config;
 use Rector\PHPUnit;
-use Rector\ValueObject;
 
-return static function (Config\RectorConfig $rectorConfig): void {
-    $rectorConfig->cacheDirectory(__DIR__ . '/.build/rector/');
-
-    $rectorConfig->paths([
-        __DIR__ . '/src/',
-        __DIR__ . '/test/',
-    ]);
-
-    $rectorConfig->phpVersion(ValueObject\PhpVersion::PHP_74);
-
-    $rectorConfig->rules([
-        Rector\Rules\Faker\GeneratorPropertyFetchToMethodCallRector::class,
-    ]);
-
-    $rectorConfig->ruleWithConfiguration(Rector\Rules\Files\ReferenceNamespacedSymbolsRelativeToNamespacePrefixRector::class, [
+$ruleSet = Rector\Config\RuleSet\Php74::create()->withRules(Rector\Config\Rules::fromArray([
+    Rector\Rules\Files\ReferenceNamespacedSymbolsRelativeToNamespacePrefixRector::class => [
         'discoverNamespacePrefixes' => true,
         'parentNamespacePrefixes' => [
             'Ergebnis\Rector\Config',
         ],
-    ]);
+    ],
+]));
 
-    $rectorConfig->sets([
+return Rector\Config\Factory::fromRuleSet($ruleSet)
+    ->withCache(__DIR__ . '/.build/rector/')
+    ->withPaths([
+        __DIR__ . '/src/',
+        __DIR__ . '/test/',
+    ])
+    ->withSets([
         PHPUnit\Set\PHPUnitSetList::COMPOSER_BASED,
+    ])
+    ->withSkip([
+        Rector\Rules\Expressions\Arrays\SortAssociativeArrayByKeyRector::class => [
+            __DIR__ . '/src/RuleSet/',
+            __DIR__ . '/test/Unit/RuleSet/',
+        ],
     ]);
-};
