@@ -11,9 +11,11 @@ For a full diff see [`40a25bc...main`][40a25bc...main].
 ### Added
 
 - Added `Factory`, `PhpVersion`, `Rules`, `RuleSet`, and `RuleSet\Php53` rule set ([#3]), by [@localheinz]
+- Added `RuleSet\Php54` rule set ([#4]), by [@localheinz]
 
 [40a25bc...main]: https://github.com/ergebnis/rector-config/compare/40a25bc...main
 
 [#3]: https://github.com/ergebnis/rector-config/pull/3
+[#4]: https://github.com/ergebnis/rector-config/pull/4
 
 [@localheinz]: https://github.com/localheinz
