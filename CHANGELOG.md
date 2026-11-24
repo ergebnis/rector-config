@@ -12,8 +12,13 @@ For a full diff see [`40a25bc...main`][40a25bc...main].
 
 - Added support for PHP 8.6 ([#46]), by [@localheinz]
 
+### Changed
+
+- Allowed installation on PHP 8.7 ([#52]), by [@localheinz]
+
 [40a25bc...main]: https://github.com/ergebnis/rector-config/compare/40a25bc...main
 
 [#46]: https://github.com/ergebnis/rector-config/pull/46
+[#52]: https://github.com/ergebnis/rector-config/pull/52
 
 [@localheinz]: https://github.com/localheinz
