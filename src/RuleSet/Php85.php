@@ -430,7 +430,7 @@ final class Php85
                 Rector\TypeDeclaration\Rector\FuncCall\NarrowArrayAnyAllNullableParamTypeRector::class => true,
                 Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeForArrayMapRector::class => false,
                 Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeForArrayReduceRector::class => false,
-                Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeFromIterableMethodCallRector::class => true,
+                Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeFromIterableMethodCallRector::class => false,
                 Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeFromVariableCallRector::class => true,
                 Rector\TypeDeclaration\Rector\FunctionLike\AddParamTypeSplFixedArrayRector::class => true,
                 Rector\TypeDeclaration\Rector\FunctionLike\AddReturnTypeDeclarationFromYieldsRector::class => true,

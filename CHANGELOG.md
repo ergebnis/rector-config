@@ -14,6 +14,7 @@ For a full diff see [`0.1.0...main`][0.1.0...main].
 - Disabled `Rector\TypeDeclaration\Rector\FuncCall\AddArrayAnyAllClosureParamTypeRector` in all rule sets ([#62]), by [@localheinz]
 - Disabled `Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeForArrayMapRector` in all rule sets ([#63]), by [@localheinz]
 - Disabled `Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeForArrayReduceRector` in all rule sets ([#64]), by [@localheinz]
+- Disabled `Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeFromIterableMethodCallRector` in all rule sets ([#65]), by [@localheinz]
 
 ## [`0.1.0`][0.1.0]
 
@@ -71,5 +72,6 @@ For a full diff see [`40a25bc...0.1.0`][40a25bc...0.1.0].
 [#62]: https://github.com/ergebnis/rector-config/pull/62
 [#63]: https://github.com/ergebnis/rector-config/pull/63
 [#64]: https://github.com/ergebnis/rector-config/pull/64
+[#65]: https://github.com/ergebnis/rector-config/pull/65
 
 [@localheinz]: https://github.com/localheinz
