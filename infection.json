@@ -11,6 +11,9 @@
   "source": {
     "directories": [
       "src"
+    ],
+    "excludes": [
+      "RuleSet"
     ]
   },
   "timeout": 10

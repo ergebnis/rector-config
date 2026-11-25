@@ -10,15 +10,49 @@ For a full diff see [`40a25bc...main`][40a25bc...main].
 
 ### Added
 
+- Added `Factory`, `PhpVersion`, `Rules`, `RuleSet`, and `RuleSet\Php53` rule set ([#3]), by [@localheinz]
+- Added `RuleSet\Php54` rule set ([#4]), by [@localheinz]
+- Added `RuleSet\Php55` rule set ([#5]), by [@localheinz]
+- Added `RuleSet\Php56` rule set ([#6]), by [@localheinz]
+- Added `RuleSet\Php70` rule set ([#7]), by [@localheinz]
+- Added `RuleSet\Php71` rule set ([#8]), by [@localheinz]
+- Added `RuleSet\Php72` rule set ([#9]), by [@localheinz]
+- Added `RuleSet\Php73` rule set ([#10]), by [@localheinz]
+- Added `RuleSet\Php74` rule set ([#11]), by [@localheinz]
+- Added `RuleSet\Php80` rule set ([#12]), by [@localheinz]
+- Added `RuleSet\Php81` rule set ([#13]), by [@localheinz]
+- Added `RuleSet\Php82` rule set ([#14]), by [@localheinz]
+- Added `RuleSet\Php83` rule set ([#15]), by [@localheinz]
+- Added `RuleSet\Php84` rule set ([#16]), by [@localheinz]
+- Added `RuleSet\Php85` rule set ([#17]), by [@localheinz]
 - Added support for PHP 8.6 ([#46]), by [@localheinz]
+- Added `RuleSet\Php86` rule set ([#55]), by [@localheinz]
 
 ### Changed
 
 - Allowed installation on PHP 8.7 ([#52]), by [@localheinz]
+- Required `rector/rector:^2.9.2` ([#57]), by [@localheinz]
 
 [40a25bc...main]: https://github.com/ergebnis/rector-config/compare/40a25bc...main
 
+[#3]: https://github.com/ergebnis/rector-config/pull/3
+[#4]: https://github.com/ergebnis/rector-config/pull/4
+[#5]: https://github.com/ergebnis/rector-config/pull/5
+[#6]: https://github.com/ergebnis/rector-config/pull/6
+[#7]: https://github.com/ergebnis/rector-config/pull/7
+[#8]: https://github.com/ergebnis/rector-config/pull/8
+[#9]: https://github.com/ergebnis/rector-config/pull/9
+[#10]: https://github.com/ergebnis/rector-config/pull/10
+[#11]: https://github.com/ergebnis/rector-config/pull/11
+[#12]: https://github.com/ergebnis/rector-config/pull/12
+[#13]: https://github.com/ergebnis/rector-config/pull/13
+[#14]: https://github.com/ergebnis/rector-config/pull/14
+[#15]: https://github.com/ergebnis/rector-config/pull/15
+[#16]: https://github.com/ergebnis/rector-config/pull/16
+[#17]: https://github.com/ergebnis/rector-config/pull/17
 [#46]: https://github.com/ergebnis/rector-config/pull/46
 [#52]: https://github.com/ergebnis/rector-config/pull/52
+[#55]: https://github.com/ergebnis/rector-config/pull/55
+[#57]: https://github.com/ergebnis/rector-config/pull/57
 
 [@localheinz]: https://github.com/localheinz
