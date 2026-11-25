@@ -4,13 +4,13 @@
 
 The following versions of `ergebnis/rector-config` have active support:
 
-- `x.y.z`
+- `^0.1.0`
 
 ## Unsupported Versions
 
 The following versions of `ergebnis/rector-config` have reached their end of life:
 
-- `x.y.z`
+- `<0.1.0`
 
 ## Reporting a Vulnerability
 

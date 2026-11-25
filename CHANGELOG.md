@@ -6,7 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`40a25bc...main`][40a25bc...main].
+For a full diff see [`0.1.0...main`][0.1.0...main].
+
+## [`0.1.0`][0.1.0]
+
+For a full diff see [`40a25bc...0.1.0`][40a25bc...0.1.0].
 
 ### Added
 
@@ -33,7 +37,9 @@ For a full diff see [`40a25bc...main`][40a25bc...main].
 - Allowed installation on PHP 8.7 ([#52]), by [@localheinz]
 - Required `rector/rector:^2.9.2` ([#57]), by [@localheinz]
 
-[40a25bc...main]: https://github.com/ergebnis/rector-config/compare/40a25bc...main
+[0.1.0]: https://github.com/ergebnis/rector-config/releases/tag/0.1.0
+[0.1.0...main]: https://github.com/ergebnis/rector-config/compare/0.1.0...main
+[40a25bc...0.1.0]: https://github.com/ergebnis/rector-config/compare/40a25bc...0.1.0
 
 [#3]: https://github.com/ergebnis/rector-config/pull/3
 [#4]: https://github.com/ergebnis/rector-config/pull/4
