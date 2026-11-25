@@ -15,10 +15,12 @@ For a full diff see [`40a25bc...main`][40a25bc...main].
 ### Changed
 
 - Allowed installation on PHP 8.7 ([#52]), by [@localheinz]
+- Required `rector/rector:^2.9.2` ([#57]), by [@localheinz]
 
 [40a25bc...main]: https://github.com/ergebnis/rector-config/compare/40a25bc...main
 
 [#46]: https://github.com/ergebnis/rector-config/pull/46
 [#52]: https://github.com/ergebnis/rector-config/pull/52
+[#57]: https://github.com/ergebnis/rector-config/pull/57
 
 [@localheinz]: https://github.com/localheinz
