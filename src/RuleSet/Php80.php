@@ -33,10 +33,7 @@ final class Php80
         return Config\RuleSet::create(
             $phpVersion,
             Config\Rules::fromArray([
-                Rules\Expressions\Arrays\SortAssociativeArrayByKeyRector::class => [
-                    'comparison_function' => 'strcmp',
-                    'direction' => 'asc',
-                ],
+                Rules\Expressions\Arrays\SortAssociativeArrayByKeyRector::class => false,
                 Rules\Expressions\CallLikes\RemoveNamedArgumentForSingleParameterRector::class => true,
                 Rules\Expressions\Matches\SortMatchArmsByConditionalRector::class => [
                     'comparison_function' => 'strcmp',

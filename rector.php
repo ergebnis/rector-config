@@ -15,6 +15,10 @@ use Ergebnis\Rector;
 use Rector\PHPUnit;
 
 $ruleSet = Rector\Config\RuleSet\Php74::create()->withRules(Rector\Config\Rules::fromArray([
+    Rector\Rules\Expressions\Arrays\SortAssociativeArrayByKeyRector::class => [
+        'comparison_function' => 'strcmp',
+        'direction' => 'asc',
+    ],
     Rector\Rules\Files\ReferenceNamespacedSymbolsRelativeToNamespacePrefixRector::class => [
         'namespacePrefixes' => [
             'Ergebnis\Rector\Config',
