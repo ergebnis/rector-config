@@ -434,7 +434,7 @@ final class Php71Test extends AbstractRuleSetTestCase
             Rector\TypeDeclaration\Rector\Closure\ClosureReturnTypeFromAssertInstanceOfRector::class => true,
             Rector\TypeDeclaration\Rector\Closure\ClosureReturnTypeRector::class => true,
             Rector\TypeDeclaration\Rector\FuncCall\AddArrayAnyAllClosureParamTypeRector::class => false,
-            Rector\TypeDeclaration\Rector\FuncCall\AddArrayFunctionClosureParamTypeRector::class => true,
+            Rector\TypeDeclaration\Rector\FuncCall\AddArrayFunctionClosureParamTypeRector::class => false,
             Rector\TypeDeclaration\Rector\FuncCall\AddArrowFunctionParamArrayWhereDimFetchRector::class => true,
             Rector\TypeDeclaration\Rector\FuncCall\NarrowArrayAnyAllNullableParamTypeRector::class => false,
             Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeForArrayMapRector::class => true,

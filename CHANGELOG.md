@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`0.1.0...main`][0.1.0...main].
 
+### Changed
+
+- Disabled `Rector\TypeDeclaration\Rector\FuncCall\AddArrayFunctionClosureParamTypeRector` in all rule sets ([#61]), by [@localheinz]
+
 ## [`0.1.0`][0.1.0]
 
 For a full diff see [`40a25bc...0.1.0`][40a25bc...0.1.0].
@@ -60,5 +64,6 @@ For a full diff see [`40a25bc...0.1.0`][40a25bc...0.1.0].
 [#52]: https://github.com/ergebnis/rector-config/pull/52
 [#55]: https://github.com/ergebnis/rector-config/pull/55
 [#57]: https://github.com/ergebnis/rector-config/pull/57
+[#61]: https://github.com/ergebnis/rector-config/pull/61
 
 [@localheinz]: https://github.com/localheinz
