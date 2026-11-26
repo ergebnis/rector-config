@@ -46,10 +46,7 @@ final class Php81Test extends AbstractRuleSetTestCase
     protected function expectedRules(): Config\Rules
     {
         return Config\Rules::fromArray([
-            Rules\Expressions\Arrays\SortAssociativeArrayByKeyRector::class => [
-                'comparison_function' => 'strcmp',
-                'direction' => 'asc',
-            ],
+            Rules\Expressions\Arrays\SortAssociativeArrayByKeyRector::class => false,
             Rules\Expressions\CallLikes\RemoveNamedArgumentForSingleParameterRector::class => true,
             Rules\Expressions\Matches\SortMatchArmsByConditionalRector::class => [
                 'comparison_function' => 'strcmp',
@@ -438,12 +435,12 @@ final class Php81Test extends AbstractRuleSetTestCase
             Rector\TypeDeclaration\Rector\Closure\ClosureReturnTypeFromAssertInstanceOfRector::class => true,
             Rector\TypeDeclaration\Rector\Closure\ClosureReturnTypeRector::class => true,
             Rector\TypeDeclaration\Rector\FuncCall\AddArrayAnyAllClosureParamTypeRector::class => false,
-            Rector\TypeDeclaration\Rector\FuncCall\AddArrayFunctionClosureParamTypeRector::class => true,
+            Rector\TypeDeclaration\Rector\FuncCall\AddArrayFunctionClosureParamTypeRector::class => false,
             Rector\TypeDeclaration\Rector\FuncCall\AddArrowFunctionParamArrayWhereDimFetchRector::class => true,
             Rector\TypeDeclaration\Rector\FuncCall\NarrowArrayAnyAllNullableParamTypeRector::class => false,
-            Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeForArrayMapRector::class => true,
-            Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeForArrayReduceRector::class => true,
-            Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeFromIterableMethodCallRector::class => true,
+            Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeForArrayMapRector::class => false,
+            Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeForArrayReduceRector::class => false,
+            Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeFromIterableMethodCallRector::class => false,
             Rector\TypeDeclaration\Rector\FunctionLike\AddClosureParamTypeFromVariableCallRector::class => true,
             Rector\TypeDeclaration\Rector\FunctionLike\AddParamTypeSplFixedArrayRector::class => true,
             Rector\TypeDeclaration\Rector\FunctionLike\AddReturnTypeDeclarationFromYieldsRector::class => true,
