@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce58ef75b792b08a0ed0225b2149e8d8",
+    "content-hash": "ee924736a804d1e6fefe24668471a389",
     "packages": [
         {
             "name": "ergebnis/rector-rules",
-            "version": "1.22.0",
+            "version": "1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/rector-rules.git",
-                "reference": "9e1be25d5182511d98a4946fd3a7bfcc19c11d43"
+                "reference": "acf006a1e77029d4ca0b746c9709f8feb340790d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/rector-rules/zipball/9e1be25d5182511d98a4946fd3a7bfcc19c11d43",
-                "reference": "9e1be25d5182511d98a4946fd3a7bfcc19c11d43",
+                "url": "https://api.github.com/repos/ergebnis/rector-rules/zipball/acf006a1e77029d4ca0b746c9709f8feb340790d",
+                "reference": "acf006a1e77029d4ca0b746c9709f8feb340790d",
                 "shasum": ""
             },
             "require": {
@@ -75,7 +75,7 @@
                 "security": "https://github.com/ergebnis/rector-rules/blob/main/.github/SECURITY.md",
                 "source": "https://github.com/ergebnis/rector-rules"
             },
-            "time": "2026-11-24T15:50:45+00:00"
+            "time": "2026-11-26T21:51:16+00:00"
         },
         {
             "name": "nikic/php-parser",
