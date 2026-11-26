@@ -6,7 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`0.1.0...main`][0.1.0...main].
+For a full diff see [`0.2.0...main`][0.2.0...main].
+
+## [`0.2.0`][0.2.0]
+
+For a full diff see [`0.1.0...0.2.0`][0.1.0...0.2.0].
 
 ### Changed
 
@@ -48,7 +52,9 @@ For a full diff see [`40a25bc...0.1.0`][40a25bc...0.1.0].
 - Required `rector/rector:^2.9.2` ([#57]), by [@localheinz]
 
 [0.1.0]: https://github.com/ergebnis/rector-config/releases/tag/0.1.0
-[0.1.0...main]: https://github.com/ergebnis/rector-config/compare/0.1.0...main
+[0.1.0...0.2.0]: https://github.com/ergebnis/rector-config/compare/0.1.0...0.2.0
+[0.2.0]: https://github.com/ergebnis/rector-config/releases/tag/0.2.0
+[0.2.0...main]: https://github.com/ergebnis/rector-config/compare/0.2.0...main
 [40a25bc...0.1.0]: https://github.com/ergebnis/rector-config/compare/40a25bc...0.1.0
 
 [#3]: https://github.com/ergebnis/rector-config/pull/3
