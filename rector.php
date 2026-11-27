@@ -12,7 +12,6 @@ declare(strict_types=1);
  */
 
 use Ergebnis\Rector;
-use Rector\PHPUnit;
 
 $ruleSet = Rector\Config\RuleSet\Php74::create()->withRules(Rector\Config\Rules::fromArray([
     Rector\Rules\Expressions\Arrays\SortAssociativeArrayByKeyRector::class => [
@@ -32,9 +31,6 @@ return Rector\Config\Factory::fromRuleSet($ruleSet)
     ->withPaths([
         __DIR__ . '/src/',
         __DIR__ . '/test/',
-    ])
-    ->withSets([
-        PHPUnit\Set\PHPUnitSetList::COMPOSER_BASED,
     ])
     ->withSkip([
         Rector\Rules\Expressions\Arrays\SortAssociativeArrayByKeyRector::class => [

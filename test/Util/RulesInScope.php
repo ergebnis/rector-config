@@ -26,12 +26,10 @@ final class RulesInScope
      * @var list<string>
      */
     private const EXCLUDED_NAMESPACE_PREFIXES = [
-        'Ergebnis\\Rector\\Rules\\PHPUnit\\',
         'Rector\\Arguments\\',
         'Rector\\Carbon\\',
         'Rector\\Doctrine\\',
         'Rector\\DowngradePhp',
-        'Rector\\PHPUnit\\',
         'Rector\\Removing\\',
         'Rector\\Renaming\\',
         'Rector\\Symfony\\',
@@ -113,6 +111,37 @@ final class RulesInScope
         }
 
         return $rector->provideMinPhpVersion();
+    }
+
+    public static function hasMinimumPhpUnitVersion(string $className): bool
+    {
+        return 1 === \preg_match('/^Rector\\\\PHPUnit\\\\PHPUnit\\d+0\\\\/', $className)
+            || 0 === \mb_strpos($className, 'Rector\\PHPUnit\\AnnotationsToAttributes\\')
+            || 0 === \mb_strpos($className, 'Ergebnis\\Rector\\Rules\\PHPUnit\\');
+    }
+
+    /**
+     * Returns the version of phpunit/phpunit that a rule for upgrading phpunit/phpunit or for using attributes requires.
+     *
+     * @throws \InvalidArgumentException
+     */
+    public static function minimumPhpUnitVersion(string $className): string
+    {
+        if (1 === \preg_match('/^Rector\\\\PHPUnit\\\\PHPUnit(?P<major>\\d+)0\\\\/', $className, $matches)) {
+            return \sprintf(
+                '%d.0',
+                $matches['major'],
+            );
+        }
+
+        if (self::hasMinimumPhpUnitVersion($className)) {
+            return '10.0';
+        }
+
+        throw new \InvalidArgumentException(\sprintf(
+            'Rule "%s" does not require a version of phpunit/phpunit.',
+            $className,
+        ));
     }
 
     /**

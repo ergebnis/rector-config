@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`0.2.0...main`][0.2.0...main].
 
+### Added
+
+- Added rules for `phpunit/phpunit` to all rule sets, enabled for the version of `phpunit/phpunit` that supports the lowest PHP version of the rule set ([#77]), by [@localheinz]
+
 ## [`0.2.0`][0.2.0]
 
 For a full diff see [`0.1.0...0.2.0`][0.1.0...0.2.0].
@@ -83,5 +87,6 @@ For a full diff see [`40a25bc...0.1.0`][40a25bc...0.1.0].
 [#65]: https://github.com/ergebnis/rector-config/pull/65
 [#66]: https://github.com/ergebnis/rector-config/pull/66
 [#75]: https://github.com/ergebnis/rector-config/pull/75
+[#77]: https://github.com/ergebnis/rector-config/pull/77
 
 [@localheinz]: https://github.com/localheinz
