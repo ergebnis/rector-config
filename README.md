@@ -44,7 +44,22 @@ Pick one of the rule sets:
 - [`Ergebnis\Rector\Config\RuleSet\Php85`](src/RuleSet/Php85.php)
 - [`Ergebnis\Rector\Config\RuleSet\Php86`](src/RuleSet/Php86.php)
 
-Each rule set lists every rule that `rector/rector` and `ergebnis/rector-rules` provide, except rules for frameworks and libraries, downgrade rules, and generic rules that only make sense with a project-specific configuration. A rule set enables or disables each of these rules explicitly and does not include any of the sets that `rector/rector` provides.
+Each rule set lists every rule that `rector/rector` and `ergebnis/rector-rules` provide, except rules for frameworks and libraries other than `phpunit/phpunit`, downgrade rules, and generic rules that only make sense with a project-specific configuration. A rule set enables or disables each of these rules explicitly and does not include any of the sets that `rector/rector` provides.
+
+For `phpunit/phpunit`, each rule set enables the rules for the version of `phpunit/phpunit` that supports the lowest PHP version of the rule set, and disables the rules that require a newer version:
+
+| Rule sets | `phpunit/phpunit` |
+|---|---|
+| `Php53`, `Php54`, `Php55` | `4.8` |
+| `Php56` | `5.7` |
+| `Php70` | `6.5` |
+| `Php71` | `7.5` |
+| `Php72` | `8.5` |
+| `Php73`, `Php74`, `Php80` | `9.6` |
+| `Php81` | `10.5` |
+| `Php82` | `11.5` |
+| `Php83` | `12.5` |
+| `Php84`, `Php85`, `Php86` | `13.0` |
 
 Create a configuration file `rector.php` in the root of your project:
 
@@ -65,7 +80,7 @@ return Config\Factory::fromRuleSet($ruleSet)
     ]);
 ```
 
-`Config\Factory::fromRuleSet()` returns the `Rector\Configuration\RectorConfigBuilder` of `rector/rector`, so you can continue to configure paths, skips, and sets for frameworks and libraries, for example the sets for PHPUnit:
+`Config\Factory::fromRuleSet()` returns the `Rector\Configuration\RectorConfigBuilder` of `rector/rector`, so you can continue to configure paths, skips, and sets for frameworks and libraries, for example the sets for Doctrine:
 
 ```diff
  <?php
@@ -73,7 +88,7 @@ return Config\Factory::fromRuleSet($ruleSet)
  declare(strict_types=1);
 
  use Ergebnis\Rector\Config;
-+use Rector\PHPUnit;
++use Rector\Doctrine;
 
  $ruleSet = Config\RuleSet\Php53::create();
 
@@ -85,11 +100,11 @@ return Config\Factory::fromRuleSet($ruleSet)
 -    ]);
 +    ])
 +    ->withSets([
-+        PHPUnit\Set\PHPUnitSetList::COMPOSER_BASED,
++        Doctrine\Set\DoctrineSetList::ANNOTATIONS_TO_ATTRIBUTES,
 +    ]);
 ```
 
-:exclamation: Avoid sets that overlap with the rule set, for example `withPhpSets()`, `withPreparedSets()`, or `withSets()` with a set from `Rector\Set\ValueObject\SetList`. `rector/rector` then warns on every run that rules are registered twice, and the set enables rules that the rule set disables on purpose. Use `withRules()` on the rule set and `withSkip()` on the `Rector\Configuration\RectorConfigBuilder` instead.
+:exclamation: Avoid sets that overlap with the rule set, for example `withPhpSets()`, `withPreparedSets()`, or `withSets()` with a set from `Rector\Set\ValueObject\SetList` or `Rector\PHPUnit\Set\PHPUnitSetList`. `rector/rector` then warns on every run that rules are registered twice, and the set enables rules that the rule set disables on purpose. Use `withRules()` on the rule set and `withSkip()` on the `Rector\Configuration\RectorConfigBuilder` instead.
 
 ### Git
 
@@ -133,7 +148,7 @@ All configuration examples use the caching feature, and if you want to use it as
      ]);
 ```
 
-Each rule passed to `withRules()` replaces the entry of the rule set as a whole, or is added when the rule set does not list it (for example `Ergebnis\Rector\Rules\PHPUnit\ReplaceTestAttributeWithTestPrefixRector`):
+Each rule passed to `withRules()` replaces the entry of the rule set as a whole, or is added when the rule set does not list it, for example a rule for Doctrine:
 
 - `false` disables the rule;
 - `true` enables a rule that is not configurable;

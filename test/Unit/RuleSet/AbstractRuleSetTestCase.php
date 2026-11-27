@@ -18,6 +18,30 @@ use PHPUnit\Framework;
 
 abstract class AbstractRuleSetTestCase extends Framework\TestCase
 {
+    /**
+     * The version of phpunit/phpunit that supports the PHP version of a rule set, keyed by that PHP version.
+     *
+     * @var array<int, string>
+     */
+    private const PHPUNIT_VERSIONS = [
+        50300 => '4.8',
+        50400 => '4.8',
+        50500 => '4.8',
+        50600 => '5.7',
+        70000 => '6.5',
+        70100 => '7.5',
+        70200 => '8.5',
+        70300 => '9.6',
+        70400 => '9.6',
+        80000 => '9.6',
+        80100 => '10.5',
+        80200 => '11.5',
+        80300 => '12.5',
+        80400 => '13.0',
+        80500 => '13.0',
+        80600 => '13.0',
+    ];
+
     final public function testDefaults(): void
     {
         $ruleSet = static::createRuleSet();
@@ -105,6 +129,38 @@ abstract class AbstractRuleSetTestCase extends Framework\TestCase
             "Failed asserting that rule set \"%s\" does not enable rules with a minimum PHP version greater than its own:\n\n%s",
             static::class,
             \implode("\n", $rulesWithGreaterMinimumPhpVersion),
+        ));
+    }
+
+    final public function testRuleSetDoesNotEnableRulesForVersionsOfPhpUnitGreaterThanPhpUnitVersionOfRuleSet(): void
+    {
+        $ruleSet = static::createRuleSet();
+
+        $phpUnitVersion = self::PHPUNIT_VERSIONS[$ruleSet->phpVersion()->toInt()];
+
+        $rulesForGreaterPhpUnitVersion = [];
+
+        foreach ($ruleSet->rules()->toArray() as $rule => $configuration) {
+            if (false === $configuration) {
+                continue;
+            }
+
+            if (!Config\Test\Util\RulesInScope::hasMinimumPhpUnitVersion($rule)) {
+                continue;
+            }
+
+            if (\version_compare(Config\Test\Util\RulesInScope::minimumPhpUnitVersion($rule), $phpUnitVersion, '<=')) {
+                continue;
+            }
+
+            $rulesForGreaterPhpUnitVersion[] = $rule;
+        }
+
+        self::assertSame([], $rulesForGreaterPhpUnitVersion, \sprintf(
+            "Failed asserting that rule set \"%s\" does not enable rules for a version of phpunit/phpunit greater than %s:\n\n%s",
+            static::class,
+            $phpUnitVersion,
+            \implode("\n", $rulesForGreaterPhpUnitVersion),
         ));
     }
 
