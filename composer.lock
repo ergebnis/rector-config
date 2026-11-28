@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a82be05354fd50639ef52f06d116ff20",
+    "content-hash": "b1b68663aae7b796ef69eed234406d55",
     "packages": [
         {
             "name": "ergebnis/rector-rules",
