@@ -46,7 +46,10 @@ final class Php83Test extends AbstractRuleSetTestCase
     protected function expectedRules(): Config\Rules
     {
         return Config\Rules::fromArray([
-            Rules\Expressions\Arrays\SortAssociativeArrayByKeyRector::class => false,
+            Rules\Expressions\Arrays\SortAssociativeArrayByKeyRector::class => [
+                'comparison_function' => 'strcmp',
+                'direction' => 'asc',
+            ],
             Rules\Expressions\CallLikes\RemoveNamedArgumentForSingleParameterRector::class => true,
             Rules\Expressions\Matches\SortMatchArmsByConditionalRector::class => [
                 'comparison_function' => 'strcmp',
