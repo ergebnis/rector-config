@@ -437,7 +437,7 @@ final class Php82Test extends AbstractRuleSetTestCase
             Rector\Php73\Rector\FuncCall\SensitiveDefineRector::class => true,
             Rector\Php73\Rector\FuncCall\SetCookieRector::class => true,
             Rector\Php73\Rector\FuncCall\StringifyStrNeedlesRector::class => true,
-            Rector\Php73\Rector\String_\SensitiveHereNowDocRector::class => true,
+            Rector\Php73\Rector\String_\SensitiveHereNowDocRector::class => false,
             Rector\Php74\Rector\ArrayDimFetch\CurlyToSquareBracketArrayStringRector::class => true,
             Rector\Php74\Rector\Assign\NullCoalescingOperatorRector::class => false,
             Rector\Php74\Rector\Closure\ClosureToArrowFunctionRector::class => false,

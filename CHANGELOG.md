@@ -11,6 +11,7 @@ For a full diff see [`0.3.1...main`][0.3.1...main].
 ### Changed
 
 - Disabled `Rector\CodeQuality\Rector\If_\SimplifyIfReturnBoolRector` in all rule sets ([#79]), by [@localheinz]
+- Disabled `Rector\Php73\Rector\String_\SensitiveHereNowDocRector` in all rule sets ([#80]), by [@localheinz]
 
 ## [`0.3.1`][0.3.1]
 
@@ -110,5 +111,6 @@ For a full diff see [`40a25bc...0.1.0`][40a25bc...0.1.0].
 [#77]: https://github.com/ergebnis/rector-config/pull/77
 [#78]: https://github.com/ergebnis/rector-config/pull/78
 [#79]: https://github.com/ergebnis/rector-config/pull/79
+[#80]: https://github.com/ergebnis/rector-config/pull/80
 
 [@localheinz]: https://github.com/localheinz
