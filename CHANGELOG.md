@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`0.3.0...main`][0.3.0...main].
 
+### Fixed
+
+- Required `ergebnis/rector-rules:~1.22.2` ([#78]), by [@localheinz]
+
 ## [`0.3.0`][0.3.0]
 
 For a full diff see [`0.2.0...0.3.0`][0.2.0...0.3.0].
@@ -94,5 +98,6 @@ For a full diff see [`40a25bc...0.1.0`][40a25bc...0.1.0].
 [#66]: https://github.com/ergebnis/rector-config/pull/66
 [#75]: https://github.com/ergebnis/rector-config/pull/75
 [#77]: https://github.com/ergebnis/rector-config/pull/77
+[#78]: https://github.com/ergebnis/rector-config/pull/78
 
 [@localheinz]: https://github.com/localheinz
