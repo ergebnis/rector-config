@@ -4,13 +4,13 @@
 
 The following versions of `ergebnis/rector-config` have active support:
 
-- `^0.3.1`
+- `^0.4.0`
 
 ## Unsupported Versions
 
 The following versions of `ergebnis/rector-config` have reached their end of life:
 
-- `<0.3.1`
+- `<0.4.0`
 
 ## Reporting a Vulnerability
 
