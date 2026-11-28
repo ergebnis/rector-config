@@ -113,7 +113,7 @@ final class Php70Test extends AbstractRuleSetTestCase
             Rector\CodeQuality\Rector\If_\ExplicitNullableObjectInstanceRector::class => true,
             Rector\CodeQuality\Rector\If_\SimplifyIfNotNullReturnRector::class => true,
             Rector\CodeQuality\Rector\If_\SimplifyIfNullableReturnRector::class => true,
-            Rector\CodeQuality\Rector\If_\SimplifyIfReturnBoolRector::class => true,
+            Rector\CodeQuality\Rector\If_\SimplifyIfReturnBoolRector::class => false,
             Rector\CodeQuality\Rector\Include_\AbsolutizeRequireAndIncludePathRector::class => false,
             Rector\CodeQuality\Rector\Isset_\IssetOnPropertyObjectToPropertyExistsRector::class => true,
             Rector\CodeQuality\Rector\LogicalAnd\AndAssignsToSeparateLinesRector::class => true,
